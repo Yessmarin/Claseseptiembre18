@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"> <%= link_to "home", root_path%> </li>
+      <li> <%= link_to "nosotros", about_path%> </li>
+
+      <% if user_signed_in? %>
+      <li><%= link_to 'Configurar cuenta' , edit_user_registration_path%>
+      <li><%= link_to 'Cerrar Sesión' , destroy_user_session_path, method:'delete'%>
+      <% else %></li>
+      <li><%= link_to 'Iniciar Sesión' , new_user_session_path %></li>
+      <% end %>
+
+    </ul>
+  </div>
+</nav>
